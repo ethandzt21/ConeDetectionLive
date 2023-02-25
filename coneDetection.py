@@ -15,8 +15,8 @@ while(cap.isOpened()):
     hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # define range of orange traffic cone in HSV
-    lower_orange1 = np.array([0, 135, 135])
-    lower_orange2 = np.array([15, 255, 255])
+    lower_yellow1 = np.array([25, 50, 70])
+    lower_yellow2 = np.array([35, 255, 255])
     upper_orange1 = np.array([159, 135, 80])
     upper_orange2 = np.array([179, 255, 255])
 
