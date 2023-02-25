@@ -4,20 +4,17 @@ import random as rng
 
 cap = cv2.VideoCapture(0)
 
-# check if camera opened successfully
 if (cap.isOpened()== False): 
-  print("Error opening video stream or file")
+  print("Error opening video stream")
 
-# read until video is completed
 while(cap.isOpened()):
-  # capture frame-by-frame
+  # read each frame
   ret, frame = cap.read()
   if ret == True:
-    # convert the image to HSV because easier to represent color in
-    # HSV as opposed to in BGR 
+    # convert image to HSV
     hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    # define range of orange traffic cone color in HSV
+    # define range of orange traffic cone in HSV
     lower_orange1 = np.array([0, 135, 135])
     lower_orange2 = np.array([15, 255, 255])
     upper_orange1 = np.array([159, 135, 80])
